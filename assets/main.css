@@ -82,7 +82,8 @@ th,td{
 /* Website Banner */
 .banner {position: relative; font-family:'Roboto Slab',serif;}
 /* .top-left {font-size:5.33em; line-height:1em; color: #505050; background: #fafafa; text-align: left; width: 1000px; height: auto; position: absolute; padding: 0 0 0 0; top: 0px;} */
-.top-left {font-size:4em; line-height:1em; color: #52739e; background: rgba(255,255,255,0.7) ; text-align: left; width: 400px; height: 440px; position: absolute; padding: 0 0 0 0; top: 0px; text-shadow: 1px 1px 3px #c0c0c0;}
+/* width/height auto-fit the content so new banner photos don't need per-edition tuning; keep the top-left area of banner photos visually plain (sky/wall) so this text stays legible */
+.top-left {font-size:4em; line-height:1em; color: #52739e; background: rgba(255,255,255,0.7) ; text-align: left; width: 400px; height: auto; position: absolute; padding: 0 0 0 0; top: 0px; text-shadow: 1px 1px 3px #c0c0c0;}
 .bottom-right {font-size:2.33em; color: #fafafa; line-height: 1.5em; width: auto; height: 100px; padding: 0px 27px 27px 0px; text-align: right; position: absolute; bottom: 0px; right: 0px; text-shadow: 0px 0px 6px #000000;}
 .bottom-left {font-size:2em; color: #000000; line-height: 1.5em; width: auto; height: 100px; padding: 0 0 0 0; text-align: left; position: absolute; bottom: 0px; right: 0px;}
 
@@ -127,6 +128,13 @@ td.flyer{white-space:nowrap; width:50%; text-align:center; vertical-align:middle
 td.sponsor img{width: 100%}
 
 footer{font-size:0.875em; margin-top:12em; text-align:center;}
+
+/* Scale the fixed 1000px layout down on narrower viewports instead of clipping */
+@media (max-width: 1040px) {
+    body{width:100%; max-width:1000px; margin: 60px 20px;}
+    table, table.navigation{width:100%; max-width:1000px;}
+    .banner img{width:100%; height:auto;}
+}
 
 /* My hacky way of making the site mobile-friendly */
 @media only screen and (max-width: 1100px) {
